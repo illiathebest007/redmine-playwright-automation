@@ -33,14 +33,20 @@ Run all tests:
 
 ```bash
 npx playwright test
+```
+
 Run tests in headed mode (with browser UI):
 
 ```bash
 npx playwright test --headed
+```
+
 Run a specific test file:
 
 ```bash
 npx playwright test tests/registration.spec.js --headed
+```
+
  Allure Reports
 To generate and view the Allure report locally:
 
@@ -48,10 +54,13 @@ Generate the report:
 
 ```bash
 npx allure generate allure-results -o allure-report --clean
+```
+
 Open the report in your browser:
 
 ```bash
 npx allure open allure-report
+```
 
 CI/CD Pipeline (GitHub Actions)
 The repository includes a GitHub Actions workflow that automatically runs tests and publishes the Allure report to GitHub Pages on every push to the main branch.
