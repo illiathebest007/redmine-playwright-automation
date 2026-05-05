@@ -1,0 +1,5 @@
+Validation errors: [
+  'Email has already been taken',
+  'Email is invalid',
+  'Login cannot be blank'
+]

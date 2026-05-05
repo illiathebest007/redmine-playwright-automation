@@ -1,0 +1,6 @@
+"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
+"","4218","Case-5: Validate empty email field","chromium","2026-05-05","passed","2026-05-05","Registration Validation Tests","register_validation.spec.js","",""
+"","1714","Case-2: Should successfully search for FAQ","chromium","2026-05-05","passed","2026-05-05","Redmine Search Feature Tests","search.spec.js","",""
+"","1847","Case-3: Navigate to Download page","chromium","2026-05-05","passed","2026-05-05","Redmine Download Feature Tests","download.spec.js","",""
+"","2593","Case-1: Navigate to Issues and view task details","chromium","2026-05-05","passed","2026-05-05","Redmine Issues Feature Tests","issues.spec.js","",""
+"","4095","Case-4: Validate empty login field","chromium","2026-05-05","passed","2026-05-05","Registration Validation Tests","register_validation.spec.js","",""
