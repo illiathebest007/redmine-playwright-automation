@@ -15,15 +15,20 @@ This project contains a set of automated tests for the **Redmine** and **Backupl
 ### 1. Clone the repository
 ```bash
 git clone 
+```
 
 Install dependencies
+
 ```bash
 npm ci
 ```
+
 3. Install Playwright browsers
 ```bash
 npx playwright install
-Running Tests
+```
+4. Running Tests
+
 Run all tests:
 
 ```bash
