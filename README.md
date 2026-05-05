@@ -17,36 +17,38 @@ This project contains a set of automated tests for the **Redmine** and **Backupl
 git clone 
 
 Install dependencies
-Bash
+```bash
 npm ci
+```
 3. Install Playwright browsers
-Bash
+```bash
 npx playwright install
-⚙️ Running Tests
+Running Tests
 Run all tests:
 
-Bash
+```bash
 npx playwright test
 Run tests in headed mode (with browser UI):
 
-Bash
+```bash
 npx playwright test --headed
 Run a specific test file:
 
-Bash
+```bash
 npx playwright test tests/registration.spec.js --headed
-📊 Allure Reports
+ Allure Reports
 To generate and view the Allure report locally:
 
 Generate the report:
 
-Bash
+```bash
 npx allure generate allure-results -o allure-report --clean
 Open the report in your browser:
 
-Bash
+```bash
 npx allure open allure-report
-🚀 CI/CD Pipeline (GitHub Actions)
+
+CI/CD Pipeline (GitHub Actions)
 The repository includes a GitHub Actions workflow that automatically runs tests and publishes the Allure report to GitHub Pages on every push to the main branch.
 
 
