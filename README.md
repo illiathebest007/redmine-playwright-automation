@@ -1,69 +1,70 @@
-# Redmine & Backuplabs Playwright Automation
+# Redmine Playwright Automation
 
-This project contains a set of automated tests for the **Redmine** and **Backuplabs** web applications, built using the **Playwright** framework, with integrated **Allure Reports** and **GitHub Actions** CI/CD pipeline.
+Automated UI tests for [redmine.org](https://www.redmine.org) built with **Playwright** and **TypeScript**, using the Page Object pattern, **Allure** reporting and a **GitHub Actions** CI pipeline.
 
-## 🛠 Technologies Used
-* **Playwright** — End-to-end web testing framework
-* **Allure Report** — Beautiful and interactive test reporting tool
-* **GitHub Actions** — CI/CD pipeline for automated testing
-* **JavaScript** / **Node.js**
+## Tech stack
 
----
+- **Playwright** — end-to-end web testing framework
+- **TypeScript** / **Node.js**
+- **Allure Report** — interactive test reporting
+- **GitHub Actions** — CI
 
-## 🚀 Getting Started
+## Project structure
 
-### 1. Clone the repository
-```bash
-git clone 
+```
+pages/                 Page Objects
+tests/                 Test specs
+playwright.config.ts   Playwright configuration
 ```
 
-Install dependencies
+## Test cases
+
+| ID     | Spec                              | Scenario                                   |
+|--------|-----------------------------------|--------------------------------------------|
+| Case-1 | `tests/issues.spec.ts`            | Open Issues list and view an issue         |
+| Case-2 | `tests/search.spec.ts`            | Search for "FAQ" returns results           |
+| Case-3 | `tests/download.spec.ts`          | Navigate to the Download page              |
+| Case-4 | `tests/register_validation.spec.ts` | Registration fails with an empty login   |
+| Case-5 | `tests/register_validation.spec.ts` | Registration fails with an empty email   |
+
+## Getting started
+
+1. Clone the repository and install dependencies:
+
+   ```bash
+   npm ci
+   ```
+
+2. Install Playwright browsers:
+
+   ```bash
+   npx playwright install chromium
+   ```
+
+## Running tests
 
 ```bash
-npm ci
+npm test                                            # all tests, headless
+npm run test:headed                                 # with browser UI
+npx playwright test tests/register_validation.spec.ts   # a single spec
+npm run typecheck                                   # TypeScript type check
 ```
 
-3. Install Playwright browsers
-```bash
-npx playwright install
-```
-4. Running Tests
+## Reports
 
-Run all tests:
-
-```bash
-npx playwright test
-```
-
-Run tests in headed mode (with browser UI):
+Playwright HTML report:
 
 ```bash
-npx playwright test --headed
+npx playwright show-report
 ```
 
-Run a specific test file:
+Allure report (requires Java 8+):
 
 ```bash
-npx playwright test tests/registration.spec.js --headed
+npm run allure:generate
+npm run allure:open
 ```
 
- Allure Reports
-To generate and view the Allure report locally:
+## CI
 
-Generate the report:
-
-```bash
-npx allure generate allure-results -o allure-report --clean
-```
-
-Open the report in your browser:
-
-```bash
-npx allure open allure-report
-```
-
-CI/CD Pipeline (GitHub Actions)
-The repository includes a GitHub Actions workflow that automatically runs tests and publishes the Allure report to GitHub Pages on every push to the main branch.
-
-
-
+The GitHub Actions workflow (`.github/workflows/playwright.yml`) runs on every push and pull request to `main`: it type-checks the project, runs the tests and uploads both the Playwright HTML report and the Allure report as build artifacts.
